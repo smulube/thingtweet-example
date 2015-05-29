@@ -28,7 +28,7 @@ app.post("/tweet", function(req, res) {
 
 });
 
-// Tell express to server our index.html file from the public folder
+// Tell express to serve our static content file from the public folder
 app.use(express.static("public"));
 
 // Boot the server instance listening on port 3000
