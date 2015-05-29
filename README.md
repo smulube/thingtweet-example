@@ -1,5 +1,10 @@
 # Thingtweet example
 
+## Get the code
+
+Clone the project to your local drive somewhere, either from the command line,
+or via the app.
+
 ## Install dependencies.
 
 Install required dependencies by running:
