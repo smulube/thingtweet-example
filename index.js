@@ -8,8 +8,7 @@ var request = require("request");
 var app = express();
 
 // variable to hold our api key
-// var apiKey = "B9C9BE260BU87J8D";
-var apiKey = "foo";
+var apiKey = "B9C9BE260BU87J8D";
 
 // Create a handler function that listens for POST requests to /tweet and
 // then creates an outgoing http request to thingspeak behind the scenes
@@ -17,7 +16,7 @@ app.post("/tweet", function(req, res) {
   var body = { api_key: apiKey, status: "Hello backend" };
 
   // send the request out to thingspeak
-  request.post("http://api.thingspeak.com/apps/thingtweet/1/statuses/update", body, function(error, response, body) {
+  request.post("http://api.thingspeak.com/apps/thingtweet/1/statuses/update", { form: body }, function(error, response, body) {
     if (!error && response.statusCode === 200) {
       // if everything good, say ok
       res.send("OK");
